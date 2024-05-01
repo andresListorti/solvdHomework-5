@@ -100,7 +100,7 @@ function measureArrayPerformance(fn, array) {
 // Examples:
 // Task 1: Advanced Array Filtering
 console.log("// Testing - Task 1: Advanced Array Filtering");
-console.log("// Testing - Task 1: Example 1");
+console.log("// Testing - Task 1: Example 1 - Object 1");
 let arrayOfObjects = [
   { a: 1, b: 2 },
   { a: 1, b: 2 },
@@ -117,7 +117,7 @@ return Object.keys(obj).includes("a") ? obj : undefined;
 console.log(customFilterUnique(arrayOfObjects, filterByPropertyA));
 // Output: [{ a: 1, b: 2 }, { a: 5, b: 6 }]
 //
-console.log("// Testing - Task 1: Example 2");
+console.log("// Testing - Task 1: Example 2 - Object 2 by City");
 const arrayOfObjects2 = [
   { name: 'John', age: 30, city: 'New York' },
   { name: 'Jane', age: 25, city: 'London' },
@@ -134,8 +134,12 @@ const filterByCity = (obj) => {
   return obj.city === 'New York' ? obj : undefined;
 };
 console.log(customFilterUnique(arrayOfObjects2, filterByCity));
+/* Output: [
+  { name: 'John', age: 30, city: 'New York' },   
+  { name: 'Bob', age: 35, city: 'New York' }     
+]*/
 //
-console.log("// Testing - Task 1: Example 3");
+console.log("// Testing - Task 1: Example 3 - Object 2 by Age");
 const filterByAge = (obj) => {
   if (!obj || typeof obj !== 'object') {
     throw new Error('Pass an object as a parameter');
@@ -143,7 +147,11 @@ const filterByAge = (obj) => {
   return obj.age === 25 ? obj : undefined;
 };
 console.log(customFilterUnique(arrayOfObjects2, filterByAge));
-//
+/* Output: [
+  { name: 'Jane', age: 25, city: 'London' },     
+  { name: 'John', age: 25, city: 'Paris' }       
+]*/
+// 
 // Task 2: Array Chunking
 console.log("// Testing - Task 2: Array Chunking");
 const originalArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
